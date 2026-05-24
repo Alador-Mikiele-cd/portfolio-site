@@ -1,13 +1,9 @@
 'use client'
-import { Karantina } from 'next/font/google'
+
 import { motion } from 'framer-motion'
 
-const karantina = Karantina({
-  weight: '400',
-  subsets: ['latin'],
-})
 
-export default function Main(){
+export default function Main({karantina}:{karantina : string}){
     return(
         <div className="bg-[url('/bg.jfif')] bg-cover bg-center h-dvh" id='home'>
         <motion.img
@@ -26,7 +22,7 @@ export default function Main(){
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className={`${karantina.className} text-[#D3D3D3] text-[200px] leading-none`}
+                className={`${karantina} text-[#D3D3D3] text-[200px] leading-none`}
               >FRONTEND</motion.h1>
 
               <motion.h3
